@@ -9,7 +9,7 @@
   <h2>Authorization</h2>
 
   <c:if test="${not empty message}">
-    <p style="color: #ff0000">${message}</p>
+    <p style="color: red">${message}</p>
   </c:if>
   <form method="post" action="<c:url value="<%= AppConstant.AUTHORIZATION_CONT %>"/>">
     <input type="text" name="<%= AppConstant.LOGIN_LABEL %>" placeholder="Login">
