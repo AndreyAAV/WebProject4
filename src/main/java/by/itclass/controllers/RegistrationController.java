@@ -26,6 +26,7 @@ public class RegistrationController extends AbstractController {
             if (Objects.nonNull(user)) {
                 HttpSession session = request.getSession();
                 session.setAttribute(AppConstant.USER_ATTR, user);
+                //отправить на LOGIN_JSP
                 redirect(request, response, AppConstant.HOME_JSP);
             } else {
                 jumpMessage(request, response, AppConstant.REGISTRATION_JSP, AppConstant.INVALID_REGISTRATION_MESSAGE);

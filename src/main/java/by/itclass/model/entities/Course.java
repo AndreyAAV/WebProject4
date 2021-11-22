@@ -3,9 +3,11 @@ package by.itclass.model.entities;
 import lombok.Data;
 
 import java.sql.Date;
+import java.util.Locale;
 
 @Data
 public class Course {
+
     private int id;
     private String title;
     private String subtitle;
@@ -13,7 +15,31 @@ public class Course {
     private Date date;
     private String place;
     private String author;
-    private Status status;
+    private boolean status;
     private Type type;
 
+    public Course(int id, String title, String subtitle, String description, Date date, String place, String author, boolean status, int type) {
+        this.id = id;
+        this.title = title;
+        this.subtitle = subtitle;
+        this.description = description;
+        this.date = date;
+        this.place = place;
+        this.author = author;
+        this.status = status;
+        setType(type);
+    }
+
+    public void setType(int type) {
+        this.type = Type.values()[type];
+    }
+
+
+    private enum Type {
+        CONFERENCE, TRAINING, LECTURE;
+
+        public String toString() {
+            return super.toString().toLowerCase();
+        }
+    }
 }

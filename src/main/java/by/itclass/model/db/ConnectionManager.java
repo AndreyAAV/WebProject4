@@ -24,6 +24,7 @@ public class ConnectionManager {
         }
     }
 
+    //проверить когда открыто для двух клиентов
     public static Connection getConnection() throws SQLException {
         if (Objects.isNull(cn) || cn.isClosed()) {
             cn = DriverManager.getConnection(properties.getProperty(AppConstant.DB_URL), properties);

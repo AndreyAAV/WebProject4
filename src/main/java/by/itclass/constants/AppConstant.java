@@ -11,13 +11,16 @@ public final class AppConstant {
     public static final String LOGIN_JSP = "/login.jsp";
     public static final String REGISTRATION_JSP = "/registration.jsp";
     public static final String HOME_JSP = "/home.jsp";
+    public static final String COURSE_LIST_ATTR = "/index.jsp";
 
     public static final String AUTHORIZATION_CONT = "/authorization";
     public static final String REGISTRATION_CONT = "/registration";
     public static final String LOGOUT_CONT = "/logout";
+    public static final String COURSE_LIST_CONT = "/course_list";
 
     public static final String MESSAGE_ATTR = "message";
     public static final String USER_ATTR = "user";
+    public static final String INDEX_JSP = "courses";
 
     public static final String DAO_IMPL = "dao.impl";
     public static final String DAO_IN_MYSQL = "mysql";
@@ -31,5 +34,6 @@ public final class AppConstant {
 
     public static final String DB_PROPERTY_FILE = "db.properties";
     public static final String APP_PROPERTY_FILE = "app.properties";
+
 
 }
