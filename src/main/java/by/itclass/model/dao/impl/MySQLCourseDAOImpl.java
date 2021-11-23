@@ -40,7 +40,7 @@ public class MySQLCourseDAOImpl implements CourseDAO {
                 String title = rs.getString(SQLRequest.TITLE_COL);
                 String subtitle = rs.getString(SQLRequest.SUBTITLE_COL);
                 String description = rs.getString(SQLRequest.DESCRIPTION_COL);
-                Date date = rs.getDate(SQLRequest.DATEL_COL);
+                Date date = rs.getDate(SQLRequest.DATE_COL);
                 String place = rs.getString(SQLRequest.PLACE_COL);
                 int type = rs.getInt(SQLRequest.TYPE_COL);
                 boolean status = rs.getBoolean(SQLRequest.STATUS_COL);
