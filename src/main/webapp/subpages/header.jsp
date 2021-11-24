@@ -19,7 +19,7 @@
                     <p>User: guest</p>
                 </td>
                 <td>
-                    <p><a href="<c:url value="<%= AppConstant.LOGIN_JSP %>"/>">Login</a></p>
+                    <p><a href="<c:url value="<%= AppConstant.LOGIN_JSP %>"/>">LogIn</a></p>
                 </td>
                 <td>
                     <p><a href="<c:url value="<%= AppConstant.REGISTRATION_JSP %>"/>">Registration</a></p>

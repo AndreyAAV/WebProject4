@@ -1,4 +1,4 @@
-function sendForm(section) {
+function sendSectionForm(section) {
     let input = document.createElement('input');
     input.type = 'hidden';
     input.name = 'section';

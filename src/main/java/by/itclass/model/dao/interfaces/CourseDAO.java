@@ -7,7 +7,6 @@ import by.itclass.model.exceptions.DAOException;
 import java.util.List;
 
 public interface CourseDAO {
-    List<Course> getAll(Section section) throws DAOException;
 
-    List<Course> getBySection(Section sect) throws DAOException;
+    List<Course> getBySection(Section section) throws DAOException;
 }

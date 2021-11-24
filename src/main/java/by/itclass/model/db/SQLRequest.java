@@ -7,7 +7,7 @@ public final class SQLRequest {
         "insert into users(login,password,name,surname,email) values(?,?,?,?,?)";
 
     public static final String SELECT_COURSES =
-            "select id, " +
+            "select courses.id, " +
             "title, " +
             "type " +
             "subtitle, " +

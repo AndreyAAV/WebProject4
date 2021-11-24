@@ -13,12 +13,6 @@ import java.util.List;
 
 public class MySQLCourseDAOImpl implements CourseDAO {
 
-
-    @Override
-    public List<Course> getAll(Section section) throws DAOException {
-        return null;
-    }
-
     @Override
     public List<Course> getBySection(Section section) throws DAOException {
 

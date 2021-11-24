@@ -51,7 +51,7 @@
     </table>
 
 
-    <form id="sectionForm" action="<c:url value="<%= AppConstant.COURSE_LIST_CONT %>" />">
+    <form id="sectionForm" action="<c:url value="<%= AppConstant.COURSE_LIST_CONT %>"/>">
     </form>
         <script src="js/main.js"></script>
 

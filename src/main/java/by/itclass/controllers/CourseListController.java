@@ -13,7 +13,6 @@ import java.util.List;
 
 @WebServlet(name = "CourseListController", value = AppConstant.COURSE_LIST_CONT)
 public class CourseListController extends AbstractController {
-    @SneakyThrows
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String section = request.getParameter(AppConstant.SECTION_LABEL);
