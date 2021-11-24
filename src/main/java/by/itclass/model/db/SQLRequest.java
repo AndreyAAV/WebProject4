@@ -14,8 +14,8 @@ public final class SQLRequest {
             "description, " +
             "date, " +
             "place, " +
-            "status, " +
-            "contact_ws(' ',user.surname,user.name) as author" +
+            "status " +
+            "contact_ws(' ', user.surname, user.name) as author " +
             "from courses " +
             "left join users on user.id=courses.idUser ";
 
