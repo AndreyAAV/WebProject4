@@ -6,23 +6,33 @@ public final class SQLRequest {
     public static final String INSERT_NEW_USER =
         "insert into users(login,password,name,surname,email) values(?,?,?,?,?)";
 
+    public static final String SELECT_COURSES_BY_ID =
+            "select title, " +
+                    "type, " +
+                    "subtitle, " +
+                    "description, " +
+                    "date, " +
+                    "place, " +
+                    "status, " +
+                    "concat_ws(' ', users.surname, users.name) as author " +
+                    "from courses " +
+                    "left join users on users.id=courses.idUser " +
+                    "where courses.id=?";
+
+
     public static final String SELECT_COURSES =
             "select courses.id, " +
             "title, " +
-            "type " +
-            "subtitle, " +
-            "description, " +
+            "type, " +
             "date, " +
-            "place, " +
-            "status " +
-            "contact_ws(' ', user.surname, user.name) as author " +
+            "concat_ws(' ', users.surname, users.name) as author " +
             "from courses " +
-            "left join users on user.id=courses.idUser ";
+            "left join users on users.id=courses.idUser ";
 
     public static final String WHERE_TODAY = "where date=curdate()";
-    public static final String WHERE_TOMORROW = "where ...";
-    public static final String WHERE_SOON = "where ...";
-    public static final String WHERE_PAST = "where ...";
+    public static final String WHERE_TOMORROW = "where date=date_add(curdate(), interval 1 day)";
+    public static final String WHERE_SOON = "where date>date_add(curdate(), interval 1 day)";
+    public static final String WHERE_PAST = "where date<curdate()";
     public static final String WHERE_ALL = "";
 
     public static final String ID_COL = "id";

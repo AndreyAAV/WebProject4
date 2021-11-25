@@ -26,6 +26,15 @@ public class CourseService {
             e.printStackTrace();
             throw new ServiceException(e);
         }
+    }
+
+    public Course getById(String id) throws ServiceException {
+        try {
+            int courseId = Integer.parseInt(id);
+            return courseDAO.getById(courseId);
+        } catch (DAOException | NumberFormatException e) {
+            throw new ServiceException(e);
+        }
 
     }
 }

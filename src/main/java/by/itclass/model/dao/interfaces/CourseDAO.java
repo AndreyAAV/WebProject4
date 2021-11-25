@@ -7,6 +7,8 @@ import by.itclass.model.exceptions.DAOException;
 import java.util.List;
 
 public interface CourseDAO {
-
     List<Course> getBySection(Section section) throws DAOException;
+    Course getById(int id) throws DAOException;
+
+
 }

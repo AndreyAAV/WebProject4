@@ -30,6 +30,14 @@ public class Course {
         setType(type);
     }
 
+    public Course(int id, String title, Date date, String author, int type) {
+        this.id = id;
+        this.title = title;
+        this.date = date;
+        this.author = author;
+        setType(type);
+    }
+
     public void setType(int type) {
         this.type = Type.values()[type];
     }

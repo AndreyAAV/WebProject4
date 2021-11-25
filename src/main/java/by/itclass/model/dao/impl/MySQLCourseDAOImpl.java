@@ -27,20 +27,15 @@ public class MySQLCourseDAOImpl implements CourseDAO {
         try {
             cn = ConnectionManager.getConnection();
             pst = cn.prepareStatement(SQL_REQUEST);
-            rs = pst.getResultSet();
+            rs = pst.executeQuery();
 
             while (rs.next()) {
                 int id = rs.getInt(SQLRequest.ID_COL);
                 String title = rs.getString(SQLRequest.TITLE_COL);
-                String subtitle = rs.getString(SQLRequest.SUBTITLE_COL);
-                String description = rs.getString(SQLRequest.DESCRIPTION_COL);
                 Date date = rs.getDate(SQLRequest.DATE_COL);
-                String place = rs.getString(SQLRequest.PLACE_COL);
                 int type = rs.getInt(SQLRequest.TYPE_COL);
-                boolean status = rs.getBoolean(SQLRequest.STATUS_COL);
                 String author = rs.getString(SQLRequest.AUTHOR_COL);
-
-                courses.add(new Course(id, title, subtitle, description, date, place, author, status, type));
+                courses.add(new Course(id, title,  date, author, type));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -51,5 +46,39 @@ public class MySQLCourseDAOImpl implements CourseDAO {
         }
 
         return courses;
+    }
+
+    @Override
+    public Course getById(int id) throws DAOException {
+        Connection cn = null;
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        Course course = null;
+
+        try {
+            cn = ConnectionManager.getConnection();
+            pst = cn.prepareStatement(SQLRequest.SELECT_COURSES_BY_ID);
+            pst.setInt(1, id);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+
+                String title = rs.getString(SQLRequest.TITLE_COL);
+                String subtitle = rs.getString(SQLRequest.SUBTITLE_COL);
+                String description = rs.getString(SQLRequest.DESCRIPTION_COL);
+                Date date = rs.getDate(SQLRequest.DATE_COL);
+                String place = rs.getString(SQLRequest.PLACE_COL);
+                int type = rs.getInt(SQLRequest.TYPE_COL);
+                boolean status = rs.getBoolean(SQLRequest.STATUS_COL);
+                String author = rs.getString(SQLRequest.AUTHOR_COL);
+
+                course = new Course(id, title, subtitle, description, date, place, author, status, type);
+            }
+
+        } catch (SQLException e) {
+            throw new DAOException(e);
+        }
+        return course;
     }
 }

@@ -32,7 +32,7 @@
 
     <table border="1">
         <tr>
-            <th>ID</th>
+
             <th>Title</th>
             <th>Date</th>
             <th>Author</th>
@@ -41,8 +41,10 @@
 
         <c:forEach var="course" items="${courses}">
             <tr>
-                <td>${course.id}</td>
-                <td>${course.title}</td>
+
+                <td>
+                    <a href="JavaScript:sendViewCourseForm(${course.id})">${course.title}</a>
+                </td>
                 <td>${course.date}</td>
                 <td>${course.author}</td>
                 <td>${course.type}</td>
@@ -52,8 +54,13 @@
 
 
     <form id="sectionForm" action="<c:url value="<%= AppConstant.COURSE_LIST_CONT %>"/>">
+        <input type="hidden" name="<%= AppConstant.SECTION_LABEL %>">
     </form>
-        <script src="js/main.js"></script>
+
+    <form id="viewCourseForm" action="<c:url value="<%= AppConstant.COURSE_VIEW_CONT %>"/>">
+        <input type="hidden" name="<%= AppConstant.ID_LABEL %>">
+    </form>
+<script src="js/main.js"></script>
 
 </body>
 </html>
