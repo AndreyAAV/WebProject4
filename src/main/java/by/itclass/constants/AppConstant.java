@@ -13,13 +13,13 @@ public final class AppConstant {
     public static final String REGISTRATION_JSP = "/registration.jsp";
     public static final String HOME_JSP = "/home.jsp";
     public static final String INDEX_JSP = "/index.jsp";
+    public static final String COURSE_JSP = "/course.jsp";
 
     public static final String AUTHORIZATION_CONT = "/authorization";
     public static final String REGISTRATION_CONT = "/registration";
     public static final String LOGOUT_CONT = "/logout";
     public static final String COURSE_LIST_CONT = "/course_list";
     public static final String COURSE_VIEW_CONT = "/course_view";
-    public static final String COURSE_JSP = "/course_jsp";
 
     public static final String MESSAGE_ATTR = "message";
     public static final String USER_ATTR = "user";
@@ -33,7 +33,7 @@ public final class AppConstant {
 
     public static final String INVALID_AUTHORIZATION_MESSAGE = "Incorrect login or password";
     public static final String INVALID_REGISTRATION_MESSAGE = "Such user already exists";
-    public static final String COURSE_NOT_FOUND_MESSAGE = "NOT FOUND MESSAGE";
+    public static final String COURSE_NOT_FOUND_MESSAGE = "Course with id not found";
 
     public static final String DB_DRIVER = "driver";
     public static final String DB_URL = "url";

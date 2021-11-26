@@ -4,7 +4,7 @@
 
 <html>
 <head>
-    <title>Title</title>
+    <title>Course</title>
 </head>
 <body>
     <jsp:include page="subpages/header.jsp"/>
