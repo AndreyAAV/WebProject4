@@ -7,5 +7,35 @@
 <body>
   <jsp:include page="subpages/header.jsp"/>
   <p>Hi, Dear ${user.name} ${user.surname}</p>
+
+  <h2>Your courses</h2>
+  <table border="1">
+    <tr>
+      <th>Title</th>
+      <th>Date</th>
+      <th>Author</th>
+      <th>Type</th>
+      <th></th>
+    </tr>
+
+    <c:forEach var="course" items="${courses}">
+      <tr>
+
+        <td>
+          <a href="JavaScript:sendViewCourseForm(${course.id})">${course.title}</a>
+        </td>
+        <td>${course.date}</td>
+        <td>${course.author}</td>
+        <td>${course.type}</td>
+        <td>
+          <button>Delete</button>
+          /
+          <button>Refactor</button>
+        </td>
+      </tr>
+    </c:forEach>
+  </table>
+
+  <jsp:include page="subpages/footer.jsp"/>
 </body>
 </html>

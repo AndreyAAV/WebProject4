@@ -52,15 +52,7 @@
         </c:forEach>
     </table>
 
-
-    <form id="sectionForm" action="<c:url value="<%= AppConstant.COURSE_LIST_CONT %>"/>">
-        <input type="hidden" name="<%= AppConstant.SECTION_LABEL %>">
-    </form>
-
-    <form id="viewCourseForm" action="<c:url value="<%= AppConstant.COURSE_VIEW_CONT %>"/>">
-        <input type="hidden" name="<%= AppConstant.ID_LABEL %>">
-    </form>
-<script src="js/main.js"></script>
+    <jsp:include page="subpages/footer.jsp"/>
 
 </body>
 </html>

@@ -34,6 +34,7 @@ public final class SQLRequest {
     public static final String WHERE_SOON = "where date>date_add(curdate(), interval 1 day)";
     public static final String WHERE_PAST = "where date<curdate()";
     public static final String WHERE_ALL = "";
+    public static final String WHERE_USER_ID = "where idUser=?";
 
     public static final String ID_COL = "id";
     public static final String NAME_COL = "name";
@@ -48,4 +49,5 @@ public final class SQLRequest {
     public static final String PLACE_COL = "place";
     public static final String STATUS_COL = "status";
     public static final String AUTHOR_COL = "author";
+
 }

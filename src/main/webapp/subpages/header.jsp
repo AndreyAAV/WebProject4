@@ -8,7 +8,7 @@
         <c:choose>
             <c:when test="${not empty user}">
                 <td>
-                    <p>User: <a href="<c:url value="<%= AppConstant.HOME_JSP %>"/>">${user.login}</a></p>
+                    <p>User: <a href="JavaScript:sendSectionForm('user_id')">${user.login}</a></p>
                 </td>
                 <td>
                     <p><a href="<c:url value="<%= AppConstant.LOGOUT_CONT %>"/>">Logout</a></p>
@@ -28,4 +28,5 @@
         </c:choose>
     </tr>
 </table>
+
 

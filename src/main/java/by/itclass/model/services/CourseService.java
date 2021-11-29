@@ -17,11 +17,10 @@ public class CourseService {
         courseDAO = DAOFactory.getCourseDAOInstance(dao);
     }
 
-    public List<Course> getBySection (String section) throws ServiceException {
+    public List<Course> getBySection (Section section) throws ServiceException {
         //select * from c ALL
-        Section sect = SectionFactory.getKindSectionMenu(section);
         try {
-            return courseDAO.getBySection(sect);
+            return courseDAO.getBySection(section);
         } catch (DAOException e) {
             e.printStackTrace();
             throw new ServiceException(e);
@@ -35,6 +34,17 @@ public class CourseService {
         } catch (DAOException | NumberFormatException e) {
             throw new ServiceException(e);
         }
+    }
+
+    public List<Course> getUserCourses(int idUser) throws ServiceException {
+        try {
+            return courseDAO.getUserCourses(idUser);
+        } catch (DAOException e) {
+            throw new ServiceException(e);
+        }
+    }
+
+    public void saveCourse() {
 
     }
 }

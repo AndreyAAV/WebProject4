@@ -7,7 +7,8 @@ public enum Section {
     TOMORROW(SQLRequest.WHERE_TOMORROW),
     SOON(SQLRequest.WHERE_SOON),
     PAST(SQLRequest.WHERE_PAST),
-    ALL(SQLRequest.WHERE_ALL);
+    ALL(SQLRequest.WHERE_ALL),
+    USER_ID(SQLRequest.WHERE_USER_ID);
 
 
     private String sql;
@@ -15,6 +16,7 @@ public enum Section {
     Section(String sql) {
         this.sql = sql;
     }
+
 
     public String getSql() {
         return SQLRequest.SELECT_COURSES + sql;
