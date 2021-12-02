@@ -6,9 +6,11 @@ import by.itclass.model.enums.Section;
 import by.itclass.model.exceptions.DAOException;
 import by.itclass.model.exceptions.ServiceException;
 import by.itclass.model.factories.DAOFactory;
+import by.itclass.model.factories.EntityFactory;
 import by.itclass.model.factories.SectionFactory;
 
 import java.util.List;
+import java.util.Map;
 
 public class CourseService {
     private CourseDAO courseDAO;
@@ -43,8 +45,15 @@ public class CourseService {
             throw new ServiceException(e);
         }
     }
-
-    public void saveCourse() {
+    //InputName;[v1,v2,v3]
+    public boolean saveCourse(Map<String, String[]> values, int idUser) throws ServiceException {
+        Course course = EntityFactory.getCourseEntity(values);
+        try {
+            return courseDAO.saveCourse(course, idUser);
+        } catch (DAOException e) {
+            e.printStackTrace();
+            throw  new ServiceException(e);
+        }
 
     }
 }

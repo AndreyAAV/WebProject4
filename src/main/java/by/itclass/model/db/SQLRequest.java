@@ -1,10 +1,16 @@
 package by.itclass.model.db;
 
 public final class SQLRequest {
+    public static final int SQL_TRUE = 0;
+    public static final int SQL_FALSE = 1;
+
     public static final String SELECT_USER_BY_LOGIN_AND_PASSWORD
         = "select * from users where login=? and password=?";
     public static final String INSERT_NEW_USER =
         "insert into users(login,password,name,surname,email) values(?,?,?,?,?)";
+
+    public static final String INSERT_NEW_COURSE =
+            "insert into courses(idUser,title,type,subtitle,description,date,place,status) value(?,?,?,?,?,?,?,?)";
 
     public static final String SELECT_COURSES_BY_ID =
             "select title, " +

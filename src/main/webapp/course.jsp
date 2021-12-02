@@ -8,6 +8,7 @@
 </head>
 <body>
     <jsp:include page="subpages/header.jsp"/>
+    <jsp:include page="subpages/message.jsp"/>
     <h1>Course ${course.title}</h1>
 
     <p>Subtitle: ${course.subtitle}</p>

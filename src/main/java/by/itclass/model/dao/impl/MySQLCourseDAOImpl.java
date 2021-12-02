@@ -105,7 +105,26 @@ public class MySQLCourseDAOImpl implements CourseDAO {
     }
 
     @Override
-    public void saveCourse() throws DAOException {
+    public boolean saveCourse(Course course, int idUser) throws DAOException {
+        boolean isSave = false;
+        try (Connection cn = ConnectionManager.getConnection();
+            PreparedStatement pst = cn.prepareStatement(SQLRequest.INSERT_NEW_COURSE)){
 
+            pst.setInt(1, idUser);
+            pst.setString(2, course.getTitle());
+            pst.setInt(3, course.getType());
+            pst.setString(4, course.getSubtitle());
+            pst.setString(5, course.getDescription());
+            pst.setDate(6, course.getDate());
+            pst.setString(7, course.getPlace());
+            pst.setBoolean(8, course.isStatus());
+
+            isSave = pst.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new DAOException(e);
+        }
+        return isSave;
     }
 }

@@ -1,8 +1,11 @@
 package by.itclass.model.entities;
 
+import by.itclass.constants.AppConstant;
 import lombok.Data;
 
 import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Locale;
 
 @Data
@@ -30,6 +33,15 @@ public class Course {
         setType(type);
     }
 
+    public void setDate(String date) {
+        SimpleDateFormat format = new SimpleDateFormat(AppConstant.DATE_PATTERN);
+        try {
+            this.date = new Date(format.parse(date).getTime());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
     public Course(int id, String title, Date date, String author, int type) {
         this.id = id;
         this.title = title;
@@ -38,10 +50,21 @@ public class Course {
         setType(type);
     }
 
-    public void setType(int type) {
-        this.type = Type.values()[type];
+    public Course() {
     }
 
+    public void setType(int ordinal) {
+        this.type = Type.values()[ordinal];
+    }
+
+    public void setType(String ordinal) {
+        setType(Integer.parseInt(ordinal));
+    }
+
+
+    public int getType() {
+        return type.ordinal();
+    }
 
     private enum Type {
         CONFERENCE, TRAINING, LECTURE;

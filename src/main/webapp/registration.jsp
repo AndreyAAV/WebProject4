@@ -6,11 +6,9 @@
   <title>REGISTRATION PAGE</title>
 </head>
 <body>
+  <jsp:include page="subpages/message.jsp"/>
   <h2>Registration</h2>
 
-  <c:if test="${not empty message}">
-    <p style="color: #ff0000">${message}</p>
-  </c:if>
   <form method="post" action="<c:url value="<%= AppConstant.REGISTRATION_CONT %>"/>">
     <input type="text" name="<%= AppConstant.LOGIN_LABEL %>" placeholder="Login"> <br>
     <input type="password" name="<%= AppConstant.PASSWORD_LABEL %>" placeholder="Password"> <br>
