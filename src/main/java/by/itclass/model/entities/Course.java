@@ -6,6 +6,7 @@ import lombok.Data;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.List;
 import java.util.Locale;
 
 @Data
@@ -20,6 +21,7 @@ public class Course {
     private String author;
     private boolean status;
     private Type type;
+    private List<Event> events;
 
     public Course(int id, String title, String subtitle, String description, Date date, String place, String author, boolean status, int type) {
         this.id = id;
@@ -62,7 +64,7 @@ public class Course {
     }
 
 
-    public int getType() {
+    public int getTypeOrdinal() {
         return type.ordinal();
     }
 

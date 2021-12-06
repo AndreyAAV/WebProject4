@@ -19,7 +19,7 @@ public class EntityFactory {
         Course course = new Course();
 
         Set<String> fieldsNames = values.keySet();//InputName;[v1,v2,v3]
-
+        //title->setTitle
         for (String name : fieldsNames) {
             try {
                 Method method = courseCl.getDeclaredMethod(getSetMethodName(name), String.class);

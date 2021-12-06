@@ -112,7 +112,7 @@ public class MySQLCourseDAOImpl implements CourseDAO {
 
             pst.setInt(1, idUser);
             pst.setString(2, course.getTitle());
-            pst.setInt(3, course.getType());
+            pst.setInt(3, course.getTypeOrdinal());
             pst.setString(4, course.getSubtitle());
             pst.setString(5, course.getDescription());
             pst.setDate(6, course.getDate());
